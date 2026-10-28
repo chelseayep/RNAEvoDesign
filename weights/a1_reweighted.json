@@ -1,0 +1,56 @@
+{
+  "method": "nelder_mead_tm_concordance",
+  "objective": "mean within-target -Spearman(E, TM)",
+  "split": "grnade_structsim/train",
+  "predictor": "drfold2",
+  "n_train_targets": 77,
+  "n_train_targets_loaded": 82,
+  "n_train_sequence_groups": 49,
+  "leaves": [
+    "evo",
+    "ss",
+    "stacking_context",
+    "ensemble_defect",
+    "hbond",
+    "sa",
+    "torsion"
+  ],
+  "dropped_leaves": [
+    "junction"
+  ],
+  "groups_file": "endgame/04_tm_refinement/seq_groups.tsv",
+  "min_tm_spread": 0.05,
+  "warm_start": "/home/c/chelseay/repos/RNAEvoDesign/diagnosis/task_1/results/weights/calibrated.json",
+  "train_concordance_warm": 0.6673,
+  "train_concordance_refined": 0.7182,
+  "train_concordance_ci95": [
+    0.6406,
+    0.7827
+  ],
+  "leaf_weights": {
+    "evo": 0.139353,
+    "ss": 0.714671,
+    "stacking_context": 0.007603,
+    "ensemble_defect": 0.479369,
+    "junction": 0.0,
+    "hbond": 0.512367,
+    "sa": 0.632034,
+    "torsion": 1.0
+  },
+  "w_evo": 0.139353,
+  "w_secondary": 1.201643,
+  "secondary_weights": [
+    0.714671,
+    0.007603,
+    0.479369,
+    0.0
+  ],
+  "w_tertiary": 2.1444010000000002,
+  "tertiary_weights": [
+    0.512367,
+    0.632034,
+    1.0
+  ],
+  "w_ss_head": 0.0,
+  "notes": "weights are ratios (max leaf scaled to 1); TM-refined on the calibration split only. val_* numbers are held-out report, never fit."
+}

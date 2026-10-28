@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rna-evo-design"
+version = "0.1.0"
+description = "Monte Carlo RNA inverse folding with a learned tertiary potential"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "biopython>=1.81",
+    "freesasa",
+    "pyyaml>=6.0",
+    "requests>=2.28",
+    # ensemble_defect is a secondary leaf with real weight in the fitted
+    # objective, and it raises without the bindings — not an optional extra.
+    "ViennaRNA>=2.6",
+    # The learned tertiary potential runs once per target, at initialisation,
+    # to build its lookup tables; the MC loop itself needs no torch.
+    "torch>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+rna-evo-design = "evo_rna.main.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["evo_rna*"]
+
+[tool.setuptools.package-data]
+# vendored gRNAde split id-lists live under evo_rna/data/splits/<split>/*.txt
+"evo_rna.data" = ["splits/*/*.txt"]

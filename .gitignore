@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.log
+
+# Environments
+.venv/
+venv/
+.env
+
+# External tool clones and model weights — fetched by scripts/setup/
+tools/
+rnafm_weights/
+bin/*/
+!bin/*.sh
+
+# Data: downloaded structures, caches, derived tables
+/data/*
+!/data/README.md
+**/dssr.json
+
+# Trained checkpoints — too large to track; see models/README.md
+/models/*
+!/models/README.md
+
+# Run outputs
+/runs/
+
+# macOS
+.DS_Store

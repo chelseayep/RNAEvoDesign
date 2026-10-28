@@ -1,0 +1,248 @@
+{
+  "schema": "evo_rna.standardised_weights/1",
+  "source": {
+    "scales": "/Users/chelsea/Documents/RNAEvoDesign/diagnosis/exp_2/results/term_scales.json",
+    "correlations": "/Users/chelsea/Documents/RNAEvoDesign/diagnosis/exp_2/results/correlations.csv",
+    "sigma": "level",
+    "provenance": {
+      "split": "grnade_structsim:train",
+      "n_targets": 120,
+      "targets": [
+        "1ET4_1_D",
+        "1HR2_1_B",
+        "1J7T_1_A-B",
+        "1NBS_1_B",
+        "1Q9A_1_A",
+        "1X8W_1_C",
+        "1Z7F_1_B-C",
+        "280D_1_C-D",
+        "2ESJ_1_A-B",
+        "2HOJ_1_A",
+        "2PWT_1_A-B",
+        "2XNZ_1_A",
+        "387D_1_A",
+        "397D_1_A-B",
+        "3BNS_1_A-B",
+        "3D0X_1_A",
+        "3D2V_1_A",
+        "3DIM_1_A",
+        "3DS7_1_A",
+        "3DVZ_1_A",
+        "3GER_1_A",
+        "3GX5_1_A",
+        "3NJ7_1_C-D",
+        "3NJ7_1_E-F",
+        "3OXE_1_B",
+        "3SKL_1_B",
+        "3SKR_1_A",
+        "3SKZ_1_B",
+        "433D_1_A-B",
+        "4E48_1_D",
+        "4E59_1_A-B",
+        "4E8Q_1_A",
+        "4FAX_1_A",
+        "4FE5_1_B",
+        "4FEP_1_B",
+        "4FNJ_1_A",
+        "4FRG_1_B",
+        "4GPW_1_A-B",
+        "4MSB_1_A-B",
+        "4NYG_1_A",
+        "4P3T_1_A-B",
+        "4PCJ_1_A",
+        "4QK9_1_A",
+        "4R4P_1_A",
+        "4RGE_1_B",
+        "4RGF_1_A",
+        "4Y1J_1_B",
+        "4Y1M_1_B",
+        "5AY3_1_A-B",
+        "5BJO_1_E",
+        "5BTM_1_B",
+        "5D5L_1_B",
+        "5FJ1_1_A",
+        "5FK2_1_A",
+        "5FKE_1_A",
+        "5KRG_1_C-D",
+        "5L4O_1_A",
+        "5LR5_1_C-D",
+        "5LYU_1_A",
+        "5NDI_1_D",
+        "5NQI_1_A",
+        "5T3K_1_A-B",
+        "5XZ1_1_A-B",
+        "5ZEI_1_A-B",
+        "5ZEM_1_A-B",
+        "6C63_1_A",
+        "6C8D_1_A-B",
+        "6CC3_1_A",
+        "6CK4_1_A",
+        "6CK4_1_D",
+        "6D8M_1_A",
+        "6D8N_1_A",
+        "6DLS_1_A",
+        "6E7L_1_A",
+        "6E8T_1_C",
+        "6E8U_1_B",
+        "6JBF_1_A-B",
+        "6N2V_1_B",
+        "6PMO_1_A",
+        "6QIR_1_A-B",
+        "6QIS_1_A-B-C-D",
+        "6UC8_1_B",
+        "6WJR_1_X",
+        "6WY2_1_B-C",
+        "6Y3G_1_F",
+        "6YMC_1_B",
+        "6ZQ9_1_K-L",
+        "7A9N_1_K-L",
+        "7D7Z_1_A",
+        "7D81_1_A",
+        "7ECK_1_A-B",
+        "7ECL_1_G-H",
+        "7ECO_1_A-B",
+        "7ECO_1_E-F",
+        "7EDU_1_C-D",
+        "7EFG_1_A",
+        "7EOK_1_A",
+        "7EOM_1_A",
+        "7EOP_1_A",
+        "7KJU_1_A",
+        "7L0Z_1_G",
+        "7OAV_1_D",
+        "7OAX_1_D",
+        "7UR5_1_v",
+        "7URI_1_y",
+        "7URM_1_v",
+        "7WIF_1_V",
+        "7XD3_1_N",
+        "7XD4_1_N",
+        "7YGD_1_N",
+        "8AMK_1_M-N",
+        "8AMK_1_U-V",
+        "8AML_1_M-N",
+        "8AML_1_Y-Z",
+        "8AMM_1_U-V",
+        "8AMN_1_A-B",
+        "8D5L_1_C",
+        "8D5L_1_D",
+        "8SWO_1_A-B",
+        "8SX5_1_A-B"
+      ],
+      "estimator": "mad_sigma",
+      "aggregation": "geometric mean of per-target sigma",
+      "source_config": {
+        "n_random": 40,
+        "n_mc": 40,
+        "n_moves": 400,
+        "mc_temperature": 0.05,
+        "mc_burn_in": 200,
+        "mc_thin": 10,
+        "expensive_every": 1,
+        "seed": 0,
+        "hbond_propensity": true
+      }
+    }
+  },
+  "blocks": {
+    "evo": {
+      "leaves": [
+        "evo"
+      ],
+      "a_tilde": [
+        1.0
+      ],
+      "W": 1.0,
+      "Z": 8.378092639930799,
+      "sigma_block": 1.0,
+      "sigma_block_if_independent": 1.0,
+      "sub_weights_raw": [
+        1.0
+      ],
+      "weight_raw": 8.378092639930799
+    },
+    "secondary": {
+      "leaves": [
+        "secondary.ss",
+        "secondary.stacking_context",
+        "secondary.ensemble_defect",
+        "secondary.junction"
+      ],
+      "a_tilde": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "W": 1.0,
+      "Z": 13.485136785369184,
+      "sigma_block": 0.683245929369506,
+      "sigma_block_if_independent": 0.5,
+      "sub_weights_raw": [
+        0.16889088026073332,
+        0.030628673010448266,
+        0.15803932849480432,
+        0.6424411182340142
+      ],
+      "weight_raw": 19.736871023605165
+    },
+    "tertiary": {
+      "leaves": [
+        "tertiary.hbond",
+        "tertiary.sa",
+        "tertiary.torsion"
+      ],
+      "a_tilde": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "W": 1.0,
+      "Z": 133.92230835626026,
+      "sigma_block": 0.539897109539298,
+      "sigma_block_if_independent": 0.5773502691896257,
+      "sub_weights_raw": [
+        0.04175121446007147,
+        0.6232211706954799,
+        0.3350276148444487
+      ],
+      "weight_raw": 248.05153795051447
+    }
+  },
+  "energy_offset": 2.8823563730707242,
+  "shares": {
+    "evo": {
+      "independent": 0.2317,
+      "variance": 0.2634
+    },
+    "secondary.ss": {
+      "independent": 0.0848,
+      "variance": 0.048
+    },
+    "secondary.stacking_context": {
+      "independent": 0.0848,
+      "variance": 0.1117
+    },
+    "secondary.ensemble_defect": {
+      "independent": 0.0848,
+      "variance": 0.102
+    },
+    "secondary.junction": {
+      "independent": 0.0848,
+      "variance": 0.0772
+    },
+    "tertiary.hbond": {
+      "independent": 0.1431,
+      "variance": 0.2005
+    },
+    "tertiary.sa": {
+      "independent": 0.1431,
+      "variance": 0.1277
+    },
+    "tertiary.torsion": {
+      "independent": 0.1431,
+      "variance": 0.0695
+    }
+  },
+  "note": "Raw weights: w_b -> EnergyFunction top-level, sub_weights_raw -> the *_weights tuple (order matches the constructor). This is an exact reparameterisation, so it changes which point in weight space you occupy, not the reachable set \u2014 it will not fix a misspecified objective. energy_offset is reporting-only; do not put it in a config."
+}

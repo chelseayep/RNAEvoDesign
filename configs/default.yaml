@@ -1,0 +1,53 @@
+# Default path + run configuration for RNAEvoDesign.
+#
+# Relative paths are resolved against the repo root. Override mechanisms,
+# in order of precedence (highest first):
+#   1. CLI flags (e.g. --pdb-lib)
+#   2. Per-path env vars:  EVO_RNA_<KEY>  (e.g. EVO_RNA_PDB_LIB=/data/lib)
+#   3. A whole replacement file via EVO_RNA_CONFIG=/path/to.yaml
+#   4. The values in this file
+#
+# Loaded by evo_rna/config.py -> load_config() / PATHS.
+
+paths:
+  bin_dir:        bin
+  rnaalign_bin:   bin/RNAalign/RNAalign  # template alignment for PSSM/profile generation
+  dssr_bin:       tools/x3dna-dssr       # repo-relative; override per-host with EVO_RNA_DSSR_BIN
+  pdb_lib:        data/rna_pdb_lib       # PDB-format template library for PSSM generation
+  pdb_dir:        data/rna_pdb           # target structures
+  data_dir:       data
+  rna_fm_model:   rnafm_weights
+  propensity_table: data/propensities.npz      # binned tertiary tables (A0/A1 arms only)
+  hbond_propensity: data/hbond_propensity.npz  # tertiary hbond log-odds (A0/A1 arms only)
+  # Learned tertiary potential — the A2 arm.  `learned_models` holds the trained
+  # residue_head.pt / pair_head.pt; `learned_tables` is the per-target table
+  # cache, built on demand by evo_rna.learned.tables.ensure_table.
+  learned_models:  models/learned_tertiary
+  learned_tables:  data/learned_tables
+  # Fitted block weights the default arm runs with (A2: TM-refit weights over
+  # the learned tertiary leaf).  Override per run with --weights.
+  default_weights: weights/a2_learned.json
+  # Shared PSSM cache. PSSMs are keyed by TARGET, not by experiment, and cost an
+  # RNAalign sweep of the whole template library each — so every run reads and
+  # writes the same dir and reuses what is already there. On a cluster point
+  # this at scratch (or export EVO_RNA_PSSM_CACHE=/scratch/.../pssm_cache).
+  pssm_cache:     data/pssm_cache
+  output_root:    runs
+
+# A2 arm defaults.  These are the settings the report's design arm ran with:
+# SAMFEO moves, uniform position sampling, 5000 steps per temperature level,
+# the learned tertiary leaf on and the two opt-in blocks (GC composition,
+# evo-shallow halving) off — neither was in the weight fit, so turning one on
+# perturbs the fitted balance.
+mc:
+  steps_per_temp: 5000
+  seed: 0
+  move_operator: samfeo
+  position_sampling: uniform
+  defect_temperature: 0.2               # only read when position_sampling: defect
+  defect_refresh: 1
+  t_min_ratio: 0.005
+  cutoff: 0.5                           # TM-score cutoff for RNAalign filtering
+  w_composition: 0.0                    # GC prior off
+  w_evo_shallow: 1.0                    # no halving on shallow profiles
+  learned_tertiary: true                # the A2 leaf; false -> binned hbond/sa/torsion
